@@ -40,8 +40,8 @@ Language
 
 Views public and admin
 
-    php artisan vendor:publish --provider="Litecms\Portfolio\Providers\PortfolioServiceProvider" --tag="view-public"
-    php artisan vendor:publish --provider="Litecms\Portfolio\Providers\PortfolioServiceProvider" --tag="view-admin"
+    php artisan vendor:publish --provider="Litecms\Portfolio\Providers\PortfolioServiceProvider" --tag="view"
+
 
 Publish admin views only if it is necessary.
 
