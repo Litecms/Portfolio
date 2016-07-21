@@ -1,11 +1,11 @@
 {
     "name": "litecms/portfolio",
     "description": "Portfolio package for litecms.",
-    "keywords": ["lavalite", "Portfolio"],
+    "keywords": ["lavalite", "lavalite" , "Portfolio"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Lavalite",
+            "name": "Litecms",
             "email": "info@lavalite.org"
         }
     ],

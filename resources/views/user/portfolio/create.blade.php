@@ -4,8 +4,8 @@
         <div class="dashboard-content">
             <div class="panel panel-color panel-inverse">
                 <div class="panel-heading">
-                    <h3 class="panel-title">create <span>Portfolio</span></h3>
-                    <p class="panel-sub-title m-t-5 text-muted">Sub title goes here with small font</p>
+                    <h3 class="panel-title">{!!Trans('portfolio::portfolio.user_names')!!}</span></h3>
+                    <p class="panel-sub-title m-t-5 text-muted">{!!Trans('portfolio::portfolio.create')!!}</p>
                 </div>
 
                 <div class="panel-body">

@@ -34,16 +34,18 @@ Configuration
 
     php artisan vendor:publish --provider="Litecms\Portfolio\Providers\PortfolioServiceProvider" --tag="config"
 
-Language
+Language files
 
     php artisan vendor:publish --provider="Litecms\Portfolio\Providers\PortfolioServiceProvider" --tag="lang"
 
-Views public and admin
+Views files
 
-    php artisan vendor:publish --provider="Litecms\Portfolio\Providers\PortfolioServiceProvider" --tag="view"
+    php artisan vendor:publish --provider="Litecms\Portfolio\Providers\PortfolioServiceProvider" --tag="views"
+    
 
+Public folders
 
-Publish admin views only if it is necessary.
+    php artisan vendor:publish --provider="Litecms\Portfolio\Providers\PortfolioServiceProvider" --tag="public"
 
 ## Usage
 

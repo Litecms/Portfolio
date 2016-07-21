@@ -7,18 +7,14 @@
                            {!!$portfolio['title']!!}<span></span>
                         </h1>
                         <div class="portfolio_slider">
-                            @forelse($portfolio['images'] as $val)
+                            @forelse($portfolio->getImages('ps', 'images') as $image)
                                 <div class="item">
                                     <figure class="postImg waves-effect">
-                                        <img src="{!!trans_url('image/ps/'.@$val['efolder'])!!}/{!!@$val['file']!!}" class="img-responsive" alt="">
+                                        <img src="{!!url(@$image)!!}" class="img-responsive" alt="">
                                     </figure>
                                 </div>
                             @empty
-                            <div class="item">
-                                    <figure class="postImg waves-effect">
-                                        <img src="{!!trans_url('image/ps/img/comingsoon.jpg')!!}" class="img-responsive" alt="">
-                                    </figure>
-                                </div>
+                            
                             @endif
                         </div>
                         <div class="port-folio-desc">
@@ -50,7 +46,8 @@
                                     <div class="col-md-6">
                                         <figure class="postImg waves-effect">
                                         <a href="{!!URL::to('portfolio')!!}/{!!@$item['slug']!!}">
-                                            <img src="{!!trans_url('image/rl/'.@$item['image']['efolder'])!!}/{!!@$item['image']['file']!!}">
+                                            <img src="{!!url($portfolio->defaultImage('rl','image'))!!}">
+                                            
                                         </a>
                                         </figure>
                                         <div class="blog_heading">
@@ -92,7 +89,7 @@
                                 <div class="row">
                                     <div class="col-xs-4">
                                       <a href="{!!URL::to('portfolio')!!}/{!!$recent['slug']!!}">
-                                        <div class="popular-post-img" style='background-image: url("{!!URL::to('image/lb/'.@$recent['image']['efolder'])!!}/{!!@$recent['image']['file']!!}");'></div>
+                                        <div class="popular-post-img" style="background-image: url('{!!url(@$recent->defaultImage('lb','images'))!!}');"></div>
                                     </a>
                                     </div>
                                     <div class="col-xs-8 popular-post-inner">

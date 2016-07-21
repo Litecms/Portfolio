@@ -7,6 +7,10 @@ return [
      */
     'name'        => 'Portfolio',
     'names'       => 'Portfolios',
+    'user_name'   => 'My <span>Portfolio</span>',
+    'user_names'  => 'My <span>Portfolios</span>',
+    'create'      => 'Create My Portfolio',
+    'edit'        => 'Update My Portfolio',
 
     /**
      * Options for select/radio/check.

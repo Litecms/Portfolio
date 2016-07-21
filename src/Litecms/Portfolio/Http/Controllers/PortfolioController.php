@@ -34,14 +34,20 @@ class PortfolioController extends BaseController
      */
     protected function index()
     {
-        $this->repository->pushCriteria(new \Litecms\Portfolio\Repositories\Criteria\PortfolioPublicCriteria());
-        $portfolios = $this->repository->scopeQuery(function ($query) {
-            return $query->with('category')->orderBy('title', 'ASC');
-        })->all();
-        $this->category->pushCriteria(new \Litecms\Portfolio\Repositories\Criteria\CategoryPublicCriteria());
-        $categories = $this->category->scopeQuery(function ($query) {
-            return $query->orderBy('name', 'ASC');
-        })->all();
+        $this->theme->asset()->container('footer')->add('atvimg', 'packages/atvImg/atvImg-min.js');
+        $this->theme->asset()->container('footer')->add('isotop', 'packages/isotope/isotope.pkgd.min.js');
+
+        $portfolios = $this->repository
+            ->pushCriteria(new \Litecms\Portfolio\Repositories\Criteria\PortfolioPublicCriteria())
+            ->scopeQuery(function ($query) {
+                return $query->with('category')->orderBy('title', 'ASC');
+            })->all();
+
+        $categories = $this->category
+            ->pushCriteria(new \Litecms\Portfolio\Repositories\Criteria\CategoryPublicCriteria())
+            ->scopeQuery(function ($query) {
+                return $query->orderBy('name', 'ASC');
+            })->all();
 
         return $this->theme->of('portfolio::public.portfolio.index', compact('portfolios', 'categories'))->render();
     }

@@ -4,18 +4,15 @@
             <div class="row">
                 <div class="col-sm-6 col-md-6">
                     <h3 class="panel-title">
-                        My
-                        <span>
-                            Portfolio
-                        </span>
+                        {!! trans('portfolio::portfolio.user_names') !!}
                     </h3>
                     <p class="panel-sub-title m-t-5 text-muted">
-                        Sub title goes here with small font
+                       {!! trans('portfolio::portfolio.user_name') !!}
                     </p>
                 </div>
                 <div class="col-sm-6 col-md-6">
                     <div class="row m-t-5">
-                        <div class="col-xs-6 col-sm-8">
+                        <div class="col-xs-12 col-sm-7 m-b-5">
                                 {!!Form::open()
                                 ->method('GET')
                                 ->action(URL::to('user/portfolio/portfolio'))!!}
@@ -30,7 +27,7 @@
                                 </div>
                                 {!! Form::close()!!}
                         </div>
-                        <div class="col-xs-6 col-sm-4">
+                        <div class="col-xs-12 col-sm-5">
                             <a class=" btn btn-success btn-block text-uppercase f-12" href="{{ trans_url('/user/portfolio/portfolio/create') }}">
                                 {{ trans('cms.create')  }} Portfolio
                             </a>
@@ -45,13 +42,9 @@
             <div class="popular-post-block" id="{!! $portfolio->getRouteKey() !!}">
                 <div class="row">
                     <div class="dashboard-blog-pic">
-                        @if(!empty(@$portfolio['image']))
-                        <img alt="" class="img-responsive" src="{!!trans_url('/image/lb/'.@$portfolio['image']['efolder'])!!}/{!!@$portfolio['image']['file']!!}">
-                            @else
-                            <img src="{!!trans_url('img/news1.jpg')!!}">
-                                @endif
-                            </img>
-                        </img>
+                       
+                        <img alt="" class="img-responsive" src="{!!url($portfolio->defaultImage('lb','images'))!!}">>
+                            
                     </div>
 
                     <div class="dashboard-blog-desc popular-post-inner">

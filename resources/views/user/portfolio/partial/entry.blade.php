@@ -1,5 +1,6 @@
 
 <div class="row">
+{!! Form::hidden('upload_folder')!!}
            <div class='col-md-4 col-sm-6'>
                    {!! Form::text('title')
                    -> required()
