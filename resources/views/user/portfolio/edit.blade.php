@@ -6,7 +6,7 @@
                     <div class="panel panel-color panel-inverse">
                             <div class="panel-heading">
                                     <h3 class="panel-title">{!!Trans('portfolio::portfolio.user_names')!!}</span></h3>
-                                    <p class="panel-sub-title m-t-5 text-muted">{!!Trans('portfolio::portfolio.edit')!!} [ {{$portfolio->title}} ]</p>
+                                    <p class="panel-sub-title m-t-5 text-muted">{!!Trans('portfolio::portfolio.edit')!!} [ {{$portfolio['title']}} ]</p>
                             </div>
                             <div class="panel-body">
                             {!!Form::vertical_open()
@@ -14,10 +14,10 @@
                                 ->method('PUT')
                                 ->class('dashboard-form')
                                 ->files('true')
-                                ->action(trans_url('user/portfolio/portfolio') .'/'.$portfolio->getRouteKey())!!}
+                                ->action(trans_url('user/portfolio/portfolio') .'/'.@$portfolio->getRouteKey())!!}
 
                               @include('portfolio::user.portfolio.partial.entry')
-
+        
                                 <div class="row m-t-20">
                                     <div class="col-md-12">
                                         <button class="btn btn-sm btn-danger waves-effect w-md waves-light text-uppercase">Update Portfolio</button>

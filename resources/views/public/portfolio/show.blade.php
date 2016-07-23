@@ -7,7 +7,7 @@
                            {!!$portfolio['title']!!}<span></span>
                         </h1>
                         <div class="portfolio_slider">
-                            @forelse($portfolio->getImages('ps', 'images') as $image)
+                            @forelse(@$portfolio->getImages('portfolio.lg', 'images') as $image)
                                 <div class="item">
                                     <figure class="postImg waves-effect">
                                         <img src="{!!url(@$image)!!}" class="img-responsive" alt="">
@@ -46,7 +46,7 @@
                                     <div class="col-md-6">
                                         <figure class="postImg waves-effect">
                                         <a href="{!!URL::to('portfolio')!!}/{!!@$item['slug']!!}">
-                                            <img src="{!!url($portfolio->defaultImage('rl','image'))!!}">
+                                            <img src="{!!url(@$portfolio->defaultImage('portfolio.md','image'))!!}" class="img-responsive">
                                             
                                         </a>
                                         </figure>
@@ -89,7 +89,7 @@
                                 <div class="row">
                                     <div class="col-xs-4">
                                       <a href="{!!URL::to('portfolio')!!}/{!!$recent['slug']!!}">
-                                        <div class="popular-post-img" style="background-image: url('{!!url(@$recent->defaultImage('lb','images'))!!}');"></div>
+                                        <div class="popular-post-img" style="background-image: url('{!!url(@$recent->defaultImage('portfolio.sm','images'))!!}');"></div>
                                     </a>
                                     </div>
                                     <div class="col-xs-8 popular-post-inner">

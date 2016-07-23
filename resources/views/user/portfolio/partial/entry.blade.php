@@ -31,14 +31,14 @@
 
             <div class='col-md-12 col-sm-12'>
             Image:
-                  {!!Filer::uploader('image',@$portfolio->getUploadURL('image'),1)!!}
-                  {!!Filer::editor('image',@$portfolio['image'],1)!!}
+                  {!!Filer::uploader('image',@$portfolio->getUploadURL('image'), 1)!!}
+                  {!!Filer::editor('image',@$portfolio['image'], 1)!!}
             </div>
 
             <div class='col-md-12 col-sm-12'>
             Images(max-10):
                   {!!Filer::uploader('images',@$portfolio->getUploadURL('images'),10)!!}
-                  {!!Filer::editor('images',@$portfolio['images'],10)!!}
+                  {!!Filer::editor('images',@$portfolio['images'], 10)!!}
             </div>
 
 

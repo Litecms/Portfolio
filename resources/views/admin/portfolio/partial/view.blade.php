@@ -36,19 +36,18 @@
       <div class='col-md-12 col-sm-12'>
        <label>Image</label>
        <div class="row">
-
-            <img src="{!!URL::to('image/sm/'.@$portfolio['image']['efolder'])!!}/{!!@$portfolio['image']['file']!!}">
+             <img src="{!!url($portfolio->defaultImage('portfolio.sm','image'))!!}">
+            
       </div>
     </div>
     <div class='col-md-12 col-sm-12'>
       <label>Images</label>
       <div class="row">
-              @forelse($portfolio['images'] as $image)
+              @foreach($portfolio->getImages('portfolio.sm','images') as $image)
                 <div class='col-md-2 row'>
-                  <img src="{!!URL::to('image/sm/'.@$image['efolder'])!!}/{!!@$image['file']!!}">
+                   <img src="{!!url(@$image)!!}"> 
                </div>
-              @empty
-              @endif
+              @endforeach
         </div>
     </div>
   </div>

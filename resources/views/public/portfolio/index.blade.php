@@ -32,8 +32,8 @@
                         <div class="col-xs-12 col-sm-6 col-md-4 {!!@$portfolio['category']['slug']!!}_{!!@$portfolio['category']['id']!!} all mix">
                             <a href="{!!URL::to('portfolio')!!}/{!!@$portfolio['slug']!!}">
                                 <div class="atvImg">
-                                    <img src="{!!url($portfolio->defaultImage('pf','image'))!!}" alt=""/>
-                                    <div class="atvImg-layer" data-img="{!!url($portfolio->defaultImage('pf','image'))!!}"></div>
+                                    <img src="{!!url(@$portfolio->defaultImage('portfolio.md','image'))!!}" class="img-responsive" alt=""/>
+                                    <div class="atvImg-layer" data-img="{!!url(@$portfolio->defaultImage('portfolio.md','image'))!!}"></div>
                                 </div>
                             </a>
                         </div>
