@@ -28,13 +28,8 @@
                     <span>{{$portfolio->title}}</span>
                 </h1>
                 <div class="blog-detail-main-slider">
-                    @if(!empty(@$portfolio['images']))
-                    @foreach($portfolio['images'] as $val)
-                    <img src="{!!trans_url('image/bd/'.@$val['efolder'])!!}/{!!@$val['file']!!}" class=" img-responsive" >
-                    @endforeach
-                    @else
-                    <img src="{!!trans_url('image/bd/img/blog1.jpg')!!}" class="img-responsive" alt="">
-                    @endif
+                    {!!@$portfolio->fileShow('images')!!}
+
                 </div>
 
                 <div class="blog-detail-desc">

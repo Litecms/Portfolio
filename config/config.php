@@ -54,13 +54,13 @@ return [
         'hidden'        => [],
         'visible'       => [],
         'guarded'       => ['*'],
-        'slugs'         => ['slug' => 'name'],
+        'slugs'         => ['slug' => 'title'],
         'dates'         => ['deleted_at'],
         'appends'       => [],
         'fillable'      => ['user_id', 'upload_folder', 'title', 'details', 'category_id', 'image', 'images', 'status'],
         'translate'     => [],
 
-        'upload-folder' => '/uploads/portfolio/portfolio',
+        'upload_folder' => '/portfolio/portfolio',
         'uploads'       => [
             'single'   => ['image'],
             'multiple' => ['images'],
@@ -72,7 +72,7 @@ return [
         'revision'      => [],
         'perPage'       => '20',
         'search'        => [
-            'name' => 'like',
+            'title' => 'like',
             'status',
         ],
     ],
@@ -89,7 +89,7 @@ return [
         'fillable'      => ['user_id', 'name', 'status'],
         'translate'     => [],
 
-        'upload-folder' => '/uploads/portfolio/category',
+        'upload_folder' => '/portfolio/category',
         'uploads'       => [
             'single'   => ['image'],
             'multiple' => ['images'],
