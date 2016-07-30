@@ -36,19 +36,15 @@
       <div class='col-md-12 col-sm-12'>
        <label>Image</label>
        <div class="row">
-             <img src="{!!url($portfolio->defaultImage('portfolio.sm','image'))!!}">
-            
+           {!!$portfolio->fileShow('image')!!}
+
       </div>
     </div>
     <div class='col-md-12 col-sm-12'>
       <label>Images</label>
-      <div class="row">
-              @foreach($portfolio->getImages('portfolio.sm','images') as $image)
-                <div class='col-md-2 row'>
-                   <img src="{!!url(@$image)!!}"> 
-               </div>
-              @endforeach
-        </div>
+
+        {!!$portfolio->fileShow('images')!!}
+
     </div>
   </div>
 </div>

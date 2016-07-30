@@ -33,14 +33,14 @@
   <div class="tab-pane " id="image">
       <div class='col-md-6 col-sm-12'>
       <label>{!!trans('portfolio::portfolio.label.image')!!}</label>
-             {!!Filer::uploader('image',@$portfolio->getUploadURL('image'),1)!!}
-             {!!Filer::editor('image',@$portfolio['image'],1)!!}
+            {!! @$portfolio->fileUpload('image')!!}
+             {!! @$portfolio->fileEdit('image')!!}
       </div>
 
       <div class='col-md-6 col-sm-12'>
        <label>Images</label>
-             {!!Filer::uploader('images',@$portfolio->getUploadURL('images'),20)!!}
-             {!!Filer::editor('images',@$portfolio['images'],20)!!}
+             {!!@$portfolio->fileUpload('images')!!}
+             {!!@$portfolio->fileEdit('images')!!}
       </div>
   </div>
 </div>
