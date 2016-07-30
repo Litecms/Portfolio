@@ -57,7 +57,7 @@ return [
         'slugs'         => ['slug' => 'title'],
         'dates'         => ['deleted_at'],
         'appends'       => [],
-        'fillable'      => ['user_id', 'upload_folder', 'title', 'details', 'category_id', 'image', 'images', 'status'],
+        'fillable'      => ['user_id', 'user_type', 'upload_folder', 'title', 'details', 'category_id', 'image', 'images', 'status'],
         'translate'     => [],
 
         'upload_folder' => '/portfolio/portfolio',
@@ -86,7 +86,7 @@ return [
         'slugs'         => ['slug' => 'name'],
         'dates'         => ['deleted_at'],
         'appends'       => [],
-        'fillable'      => ['user_id', 'name', 'status'],
+        'fillable'      => ['user_id', 'user_type', 'name', 'status'],
         'translate'     => [],
 
         'upload_folder' => '/portfolio/category',

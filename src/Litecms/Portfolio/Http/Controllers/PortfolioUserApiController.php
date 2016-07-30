@@ -99,6 +99,7 @@ class PortfolioUserApiController extends BaseController
         try {
             $attributes             = $request->all();
             $attributes['user_id']  = user_id('admin.api');
+            $attributes['user_type'] = user_type();
             $portfolio          = $this->repository->create($attributes);
             $portfolio          = $portfolio->presenter();
             $portfolio['code']  = 2004;

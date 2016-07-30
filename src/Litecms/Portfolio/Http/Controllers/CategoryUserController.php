@@ -98,6 +98,7 @@ class CategoryUserController extends BaseController
         try {
             $attributes = $request->all();
             $attributes['user_id'] = user_id();
+            $attributes['user_type'] = user_type();
             $category = $this->repository->create($attributes);
 
             return redirect(trans_url('/user/portfolio/category'))
