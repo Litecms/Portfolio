@@ -48,7 +48,7 @@ class PortfolioResourceController extends BaseController
 
         $portfolios = $this->repository->paginate();
 
-        return $this->response->title(trans('portfolio::portfolio.names'))
+        return $this->response->setMetaTitle(trans('portfolio::portfolio.names'))
             ->view('portfolio::portfolio.index', true)
             ->data(compact('portfolios'))
             ->output();
@@ -71,7 +71,7 @@ class PortfolioResourceController extends BaseController
             $view = 'portfolio::portfolio.new';
         }
 
-        return $this->response->title(trans('app.view') . ' ' . trans('portfolio::portfolio.name'))
+        return $this->response->setMetaTitle(trans('app.view') . ' ' . trans('portfolio::portfolio.name'))
             ->data(compact('portfolio'))
             ->view($view, true)
             ->output();
@@ -88,7 +88,7 @@ class PortfolioResourceController extends BaseController
     {
 
         $portfolio = $this->repository->newInstance([]);
-        return $this->response->title(trans('app.new') . ' ' . trans('portfolio::portfolio.name')) 
+        return $this->response->setMetaTitle(trans('app.new') . ' ' . trans('portfolio::portfolio.name')) 
             ->view('portfolio::portfolio.create', true) 
             ->data(compact('portfolio'))
             ->output();
@@ -134,7 +134,7 @@ class PortfolioResourceController extends BaseController
      */
     public function edit(PortfolioRequest $request, Portfolio $portfolio)
     {
-        return $this->response->title(trans('app.edit') . ' ' . trans('portfolio::portfolio.name'))
+        return $this->response->setMetaTitle(trans('app.edit') . ' ' . trans('portfolio::portfolio.name'))
             ->view('portfolio::portfolio.edit', true)
             ->data(compact('portfolio'))
             ->output();

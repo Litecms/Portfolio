@@ -39,7 +39,7 @@ class PortfolioPublicController extends BaseController
 
 
 
-        return $this->response->title(trans('portfolio::portfolio.names'))
+        return $this->response->setMetaTitle(trans('portfolio::portfolio.names'))
             ->view('portfolio::public.portfolio.index')
             ->data(compact('portfolios'))
             ->output();
@@ -61,7 +61,7 @@ class PortfolioPublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('portfolio::portfolio.names'))
+        return $this->response->setMetaTitle(trans('portfolio::portfolio.names'))
             ->view('portfolio::public.portfolio.index')
             ->data(compact('portfolios'))
             ->output();
@@ -81,7 +81,7 @@ class PortfolioPublicController extends BaseController
                          ->where('slug', $slug);
         })->first(['*']);
 
-        return $this->response->title(trans('portfolio::portfolio.name'))
+        return $this->response->setMetaTitle(trans('portfolio::portfolio.name'))
             ->view('portfolio::public.portfolio.show')
             ->data(compact('portfolio'))
             ->output();
