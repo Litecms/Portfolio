@@ -49,7 +49,7 @@ class CategoryResourceController extends BaseController
         $categories = $this->repository->paginate();
 
         return $this->response->setMetaTitle(trans('portfolio::category.names'))
-            ->view('portfolio::category.index', true)
+            ->view('portfolio::category.index')
             ->data(compact('categories'))
             ->output();
     }

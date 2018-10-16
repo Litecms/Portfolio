@@ -21,11 +21,6 @@
                     <li class="{!!(request('status') == 'deleted')?'active':'';!!}"><a href="{!!guard_url('portfolio/category?status=deleted')!!}">Trashed</a></li>
                     <li class="pull-right">
                     <span class="actions">
-                    <!--   
-                    <a  class="btn btn-xs btn-purple"  href="{!!guard_url('portfolio/category/reports')!!}"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-sm hidden-xs"> Reports</span></a>
-                    @include('portfolio::admin.category.partial.actions')
-                    -->
-                    @include('portfolio::admin.category.partial.filter')
                     @include('portfolio::admin.category.partial.column')
                     </span> 
                 </li>

@@ -1,4 +1,4 @@
-@include('portfolio::public.portfolio.partial.header')
+@include('portfolio::portfolio.partial.header')
 <section class="content">
     <div class="container">
         <div class="portfolio">

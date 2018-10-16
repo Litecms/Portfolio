@@ -40,7 +40,7 @@ class PortfolioPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('portfolio::portfolio.names'))
-            ->view('portfolio::public.portfolio.index')
+            ->view('portfolio::portfolio.index')
             ->data(compact('portfolios'))
             ->output();
     }
@@ -62,7 +62,7 @@ class PortfolioPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('portfolio::portfolio.names'))
-            ->view('portfolio::public.portfolio.index')
+            ->view('portfolio::portfolio.index')
             ->data(compact('portfolios'))
             ->output();
     }
@@ -82,7 +82,7 @@ class PortfolioPublicController extends BaseController
         })->first(['*']);
 
         return $this->response->setMetaTitle(trans('portfolio::portfolio.name'))
-            ->view('portfolio::public.portfolio.show')
+            ->view('portfolio::portfolio.show')
             ->data(compact('portfolio'))
             ->output();
     }
